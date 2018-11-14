@@ -1,0 +1,20 @@
+{
+  "name": "project-3-orgospace",
+  "version": "1.0.0",
+  "description": "This is my Project 3 of WDI18 - Created an employee based database to neatly organize clients and their resumes zZ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BriTFromIT/Project-3-OrgoSpace.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BriTFromIT/Project-3-OrgoSpace/issues"
+  },
+  "homepage": "https://github.com/BriTFromIT/Project-3-OrgoSpace#readme"
+}
