@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/Project-3-OrgoSpace
+// mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/Project-3-OrgoSpace
 
 const connection = mongoose.connection;
 connection.on('connected', () => {
@@ -18,7 +18,7 @@ connection.on('error', (err) => {
 
 app.use(bodyParser.json());
 app.get('/', (req,res) => {
-  res.send('Hello world!')
+  res.send('WE GOT ACTIONNNNN')
 })
 
 const PORT = process.env.PORT || 3000;
