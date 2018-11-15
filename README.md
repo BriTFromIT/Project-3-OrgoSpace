@@ -5,3 +5,8 @@ This is my Project 3 of WDI18 - Created an employee based database to neatly org
 Heroku App:
 
 https://project3orgospace.herokuapp.com/
+
+Stretch Goals:
+
+Linkedin API:
+https://developer.linkedin.com/docs/rest-api
