@@ -31,6 +31,8 @@ let Portfolio1 = new Portfolio ({
 
 }) 
 
+ // ---------------------------------------------------------------
+
 let Portfolio2 = new Portfolio ({
     img: " ",
     clientName: " David Williams ",
@@ -45,6 +47,8 @@ let Portfolio2 = new Portfolio ({
     brandStatement: " "
 
 }) 
+
+ // ---------------------------------------------------------------
 
 let Portfolio3 = new Portfolio ({
     img: " ",
@@ -61,64 +65,6 @@ let Portfolio3 = new Portfolio ({
 
 }) 
 
-// let resume1 = new resume1 ({
-//     img: ""//ADD IMAGE OF YOUR RESUME HERE
-// })
-// let resume2 = new resume2 ({
-//     img: ""//ADD IMAGE OF YOUR RESUME HERE
-// })
-// let resume3 = new resume3 ({
-//     img: ""//ADD IMAGE OF YOUR RESUME HERE
-// })
-
-
-// // ---------------------------------------------------------------
-
-// let coverLetter1 = new coverLetter1 ({
-//     img: ""// ADD YOUR COVER LETTER HERE    
-// })
-// let coverLetter2 = new coverLetter2 ({
-//     img: ""// ADD YOUR COVER LETTER HERE    
-// })
-// let coverLetter3 = new coverLetter3 ({
-//     img: ""// ADD YOUR COVER LETTER HERE    
-// })
-
-// // ---------------------------------------------------------------
-
-// let brandStatement1 = new brandStatement1 ({
-//     img: ""//ADD YOUR BRAND STATEMENT HERE 
-// })
-// let brandStatement2 = new brandStatement2 ({
-//     img: ""//ADD YOUR BRAND STATEMENT HERE 
-// })
-// let brandStatement3 = new brandStatement3 ({
-//     img: ""//ADD YOUR BRAND STATEMENT HERE 
-// })
-
-// // ---------------------------------------------------------------
-
-// let bio1 = new bio1 ({
-//     img: "" //ADD YOUR BIO HERE
-// })
-// let bio2 = new bio2 ({
-//     img: "" //ADD YOUR BIO HERE
-// })
-// let bio3 = new bio3 ({
-//     img: "" //ADD YOUR BIO HERE
-// })
-
-// // ---------------------------------------------------------------
-
-// let linkedInSite1 = new linkedInSite1 ({
-//     img: "" //ADD YOUR LINKEDIN SITE HERE
-// })
-// let linkedInSite2 = new linkedInSite2 ({
-//     img: "" //ADD YOUR LINKEDIN SITE HERE
-// })
-// let linkedInSite3 = new linkedInSite3 ({
-//     img: "" //ADD YOUR LINKEDIN SITE HERE
-// })
 
 
 
@@ -141,6 +87,8 @@ let Portfolio3 = new Portfolio ({
  
  })
 
+  // ---------------------------------------------------------------
+
  let client2 = new Client ({
     img: " ",
     name: " ",
@@ -150,6 +98,8 @@ let Portfolio3 = new Portfolio ({
     portfolioFiles: [ Portfolio2 ] 
  
  })
+
+  // ---------------------------------------------------------------
 
  let client3 = new Client ({
     img: " ",
