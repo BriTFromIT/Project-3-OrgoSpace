@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class NavBar extends Component {
+class employeePage extends Component {
     render() {
         return (
             <div>
-                NAV BARRRRRRRRRRRRRRRRR
+                EMPLOYEE PAGE
             </div>
         );
     }
 }
 
-export default NavBar;
+export default employeePage;
