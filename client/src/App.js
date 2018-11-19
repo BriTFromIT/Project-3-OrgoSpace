@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import clientPage from './components/clientPage';
 import employeePage from './components/employeePage';
 import portfolioPage from './components/portfolioPage';
 import NavBar from './components/NavBar'; 
+import styled from 'styled-components'
+
 
 // import logo from './logo.svg';
 // import './App.css';
