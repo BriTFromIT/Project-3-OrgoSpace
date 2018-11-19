@@ -3,8 +3,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
+const routes = require('./routes/index');
 
 // mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/Project-3-OrgoSpace
+
+app.use('/', routes)
 
 const connection = mongoose.connection;
 connection.on('connected', () => {

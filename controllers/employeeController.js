@@ -1,4 +1,4 @@
-const Employee = require('../models/Employee')
+const Employee = require('../model/Employee')
 // const Client = require('../model/Client')
 // const Portfolio = require('../model/Portfolio')
 

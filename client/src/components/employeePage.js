@@ -5,7 +5,13 @@ class employeePage extends Component {
     render() {
         return (
             <div>
+
+  <Button bsStyle="primary">Primary</Button>
+
+
 <Button bsStyle="success">Success</Button>
+
+
 
                 EMPLOYEE PROFILE PAGE
                 </div>

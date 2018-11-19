@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Navbar } from 'react-bootstrap';
 
 class NavBar extends Component {
     render() {
@@ -7,11 +6,10 @@ class NavBar extends Component {
 
 <div>
 
- NAV BARRRRRRRR 
-
+     NAV BARRRRRRRR 
+        
 </div>
      
-        
         );
     }
 }

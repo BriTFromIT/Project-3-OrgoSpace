@@ -1,14 +1,13 @@
-const Employee = require('../models/Employee')
+// const Employee = require('../model/Employee')
 const Client = require('../model/Client')
 const Portfolio = require('../model/Portfolio')
 
-const clientsController = {
-    index: (req, res) => {
-        var clientId = req.params.clientId
-        Employee.findById(clientId).populate('clients').then((client) => {
-            res.send(employee.clients)
+let clientsController = {
+    index: ((req, res) => {
+        Client.find().then(clients => {
+            res.render('/clientPage', {clients: clients });
         })
-    },
+    }),
     new: (req, res) => {
         res.render('clients/new')
     },
