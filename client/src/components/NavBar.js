@@ -9,9 +9,10 @@ const NavBarStyles = styled.div`
 display: flex;
 padding: 10px;
 justify-content: space-around;
-background: black;
+background: turquoise;
 font-weight: 800;
-color: turquoise;
+border: solid;
+color: black;
 font-size: 25px;
 margin: 0;
 
@@ -19,11 +20,12 @@ a{
    text-decoration: none;
 }
 a:visited{
-   color: turquoise;
+   color: black;
 }
 a:hover{
    color: white;
 }
+
 `
 
 

@@ -3,7 +3,15 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-// import Client from './clientPage'
+// ***** THIS PAGE WILL SHOW THE EMPLOYEE'S PAGE - SHOW INFO FOR:
+//IMG
+//USERNAME
+//LOCATION
+
+
+// THIS PAGE WILL SHOW THE BUTTON TO NAVIGATE TO CLIENT'S PAGE
+
+
 
 const EmployeeStyle = styled.div`
 
@@ -15,98 +23,63 @@ display: flex;
     align-items: center;
 justify-content: center;
 
-h1, h3, form {
+h1, form {
     text-algin:center;
-    color: green;
-    background-color: white;
+    color: black;
     align-items: center;
+    border: solid;
 }
 
+
 }`
+
 
 // Create a button that will take you to the Clients page 
 
 class employeePage extends Component {
-
-    state = {
-        clients: [],
-        newClient: {
-            name: "  ",
-            location: " ",
-            contact: " ",
-            currentPosition: " ",
-        }
-    }
-
-    handleChange = (event) => {
-        console.log('name', event.target.name)
-        console.log('value', event.target.value)
-        const updatedNewClient = { ...this.state.newClient }
-
-        updatedNewClient[event.target.name] = event.target.value
-        this.setState({ newClient: updatedNewClient })
-    }
-
-    handleSubmit = (event) => {
-        event.preventDefault()
-        axios.post('/api/clients', this.state.newClient).then(res => {
+        state = {
+            // img: " ",
+            username: "Diamond Danner ",
+            location: " Atlanta, GA ",
+                }
+    
+    componentDidMount() {
+        const employeeId = this.props.match.params.username
+        axios.get(`/api/employee/${employeeId}`).then(res => {
             console.log(res.data)
-            this.props.history.push(`/clients/${res.data._id}`)
+            // this.setState({
+            //     employee: res.data,
+            //     clients: res.data.clients
+            // })
         })
     }
 
-    // getAllClients = () => {
-    //     axios.get('/api/clients').then((res) => {
-    //         this.setState({ clients: res.data })
-    //     })
-    // }
-
-    // componentDidMount() {
-    //     this.getAllCreatures()
-    // }
 
     render() {
         return (
-            <div>
-                <EmployeeStyle>
-                    <div> <h1> Welcome Back, $#@%$#^%&^%T%$## </h1>
-                        <h3> *** ORGOSPACE *** HOMEPAGE *** </h3>
-                        <form onSubmit={this.handleChange.Submit}>
-                            <div>
-                                <label htmlFor="name"> Client Name: </label>
-                                <input onChange={this.handleChange} value={this.state.newClient.name} type="text" name="name" />
-                            </div>
+            <EmployeeStyle>
+                <div>
+                    <h1> Welcome Back, {this.state.username} !</h1>
+                    <br></br>
+                    <h3> Employee Info: </h3>
 
-                            <div>
-                                <label htmlFor="location"> Client Location: </label>
-                                <input onChange={this.handleChange} value={this.state.newClient.location} type="text" name="location" />
-                            </div>
-
-                            <div>
-                                <label htmlFor="contact"> Client Contact: </label>
-                                <input onChange={this.handleChange} value={this.state.newClient.contact} type="text" name="contact" />
-                            </div>
-
-                            <div>
-                                <label htmlFor="currentPosition"> Client Desired Position: </label>
-                                <input onChange={this.handleChange} value={this.state.newClient.currentPosition} type="text" name="currentPosition" />
-                            </div>
-                            <button type="submit"> Client Created </button>
-
-                        </form> </div>
-
-
-                </EmployeeStyle>
-
-
-
-
-                EMPLOYEE PROFILE PAGE
+                     {/* Photo: {this.state.img} */}
+                     <br></br>
+                     Name: {this.state.username}
+                     <br></br>
+                     Location:   {this.state.location}
+                     <br></br> 
+                     <br></br>
+                    <Link to='/clients'><button> Clients </button> </Link>
+                   <Link to='/employee'><button> Home </button></Link> 
+                    <button> Update Employee Profile </button>
                 </div>
-
-
+            </EmployeeStyle>
         );
     }
 }
 
 export default employeePage;
+
+
+

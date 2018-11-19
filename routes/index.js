@@ -20,22 +20,20 @@ router.get('/api/employee/:id', employeeController.show)
 
 
 router.get('/api/clients/', clientsController.index)
-// router.get('/api/clients/new', clientController.new)
-router.get('/api/clients/:clientId/portfolios', clientsController.show)
-router.post('/api/clients/:clientId/portfolio', clientsController.create)
-// router.patch('/api/clients/:clientId', clientController.update)
-// router.post('/api/clients/:clientId/edit', clientController.edit)
+router.get('/api/clients/portfolios', clientsController.show)
+router.post('/api/clients/clientnew', clientsController.create)
+router.patch('/api/clients/:clientId', clientsController.update)
 router.delete('/api/clients/:clientId', clientsController.delete)
 
 
-// // router.get('/api/portfolios/', portfoliosController.index)
-// // router.get('/api/portfolios/new', portfoliosController.new)
-// // router.get('/api/portfolios/:portfolioId/portfolios', portfoliosController.show)
-// // router.post('/api/portfolios/:portfolioId/portfolio', portfoliosController.create)
-// // router.patch('/api/portfolios/:portfolioId', portfoliosController.update)
-// // router.post('/api/portfolios/:portfolioId/edit', portfoliosController.edit) // POST will show the create page for new user profile
+// router.get('/api/portfolios/', portfoliosController.index)
+// router.get('/api/portfolios/new', portfoliosController.new)
+// router.get('/api/portfolios/:portfolioId/portfolios', portfoliosController.show)
+// router.post('/api/portfolios/:portfolioId/portfolio', portfoliosController.create)
+// router.patch('/api/portfolios/:portfolioId', portfoliosController.update)
+// router.post('/api/portfolios/:portfolioId/edit', portfoliosController.edit) // POST will show the create page for new user profile
 
-// // router.delete('/api/portfolios/:portfolioId', portfoliosController.delete)
+// router.delete('/api/portfolios/:portfolioId', portfoliosController.delete)
 
 
 

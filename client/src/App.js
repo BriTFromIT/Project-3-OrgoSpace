@@ -4,7 +4,8 @@ import clientPage from './components/clientPage';
 import employeePage from './components/employeePage';
 import portfolioPage from './components/portfolioPage';
 import NavBar from './components/NavBar'; 
-import styled from 'styled-components'
+import clientNew from './components/clientNew'
+import styled from 'styled-components';
 
 
 // import logo from './logo.svg';
@@ -17,6 +18,7 @@ class App extends Component {
       <div>
         <NavBar/>
         <Switch>
+        <Route exact path='/clients/clientnew' component= {clientNew}/>>
           <Route exact path='/clients' component= {clientPage}/>>
           <Route exact path='/portfolios' component= {portfolioPage}/>>
           <Route path='/' component= {employeePage}/>>
