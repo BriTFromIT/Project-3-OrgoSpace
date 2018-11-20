@@ -140,7 +140,7 @@ let newEmployee = new Employee({
     username: " Diamond Danner ",
     password: " DiamondIsLitty08 ",
     location: " Atlanta, Georgia ",
-    clientProfiles: [client3],
+    clientProfiles: [client1, client2, client3],
 
 })
 

@@ -11,10 +11,11 @@ let clientsController = {
 
  
     show: (req, res) => {
-        const client = req.params.client.clientId
-        console.log(client)
-        Client.findById(client).populate('portfolios').then((portfolios) => {
-            res.render('portfolios/show', { client: client })
+        console.log('PARAMS', req.params)
+        var clientId = req.params.clientId
+        Client.findById(clientId)
+        .then((client) => {
+            res.send(client)
         })
     },
     create: (req, res) => {
@@ -22,23 +23,7 @@ let clientsController = {
         Client.create(req.body).then((client) => {
             res.send(client)
         })
-        // console.log("Client Created! ")
-        // console.log(req.body)
-        // Client.create(req.body).then((newClient) => {
-        //     console.log("NEW CLIENT", newClient)
-        //     newClient.save()
-        //     res.redirect(`/clients/${newClient._Id}`)
-        // })
     },
-    // update: (req, res) => {
-    //     var clientId = req.params.clientId
-    //     Client.findByIdAndUpdate(clientId, req,body, { new: true})
-    //     .then((updatedClient) => {
-    //         updatedClient.save()
-    //         res.send(updatedClient)
-    //     })
-    // },
-    
     delete: (req, res) => {
         Client.findByIdAndRemove(req.params.id).then(() => {
             res.redirect(`/clients`)
@@ -46,6 +31,4 @@ let clientsController = {
     }
 
 }
-
-
 module.exports = clientsController

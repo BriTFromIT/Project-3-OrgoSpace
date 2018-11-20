@@ -20,21 +20,15 @@ router.patch('/api/employee/:employeeId', employeeController.update)
 
 
 
-router.get('', clientsController.index)
 router.get('/api/employee/:employeeId/clients', clientsController.index)
 router.get('/api/employee/:employeeId/clients/:clientId', clientsController.show)
 router.post('/api/employee/:employeeId/clients', clientsController.create)
 router.delete('/api/employee/:employeeId/clients/:clientId', clientsController.delete)
 
 
-// router.get('/api/portfolios/', portfoliosController.index)
-// router.get('/api/portfolios/new', portfoliosController.new)
-// router.get('/api/portfolios/:portfolioId/portfolios', portfoliosController.show)
-// router.post('/api/portfolios/:portfolioId/portfolio', portfoliosController.create)
-// router.patch('/api/portfolios/:portfolioId', portfoliosController.update)
-// router.post('/api/portfolios/:portfolioId/edit', portfoliosController.edit) // POST will show the create page for new user profile
+// router.get('/api/employee/:employeeId/clients/:clientId/portfolios', portfoliosController.index)
+// router.get('/api/employee/:employeeId/clients/:clientId/portfolios/:porfolioId', portfoliosController.show)
 
-// router.delete('/api/portfolios/:portfolioId', portfoliosController.delete)
 
 
 

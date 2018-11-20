@@ -78,11 +78,11 @@ class employeePage extends Component {
                         <div key={employee._id}>
                             {employee.username} <br />
                             {employee.location}
+                            <Link to='/employee/:employeeId'> <button> Update Info </button></Link>
+                            <Link to={`/${employee._id}/clients`}><button> Clients </button> </Link>
+                            <Link to='/employee'><button> Home </button></Link>
                         </div>
                     ))}
-                    <Link to='/employee/:employeeId'> <button> Update Info </button></Link>
-                    <Link to='/clients'><button> Clients </button> </Link>
-                    <Link to='/employee'><button> Home </button></Link>
                   
                 </div>
             </EmployeeStyle>

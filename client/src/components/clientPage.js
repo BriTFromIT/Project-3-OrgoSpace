@@ -28,15 +28,15 @@ h1, h3, form {
 
 class clientPage extends Component {
     state = {
-        clients: [],
         clientProfiles: [],
 
     }
 
     getAllPortfolios = () => {
-        axios.get(`/api/employee/:employeeId/clients/:clientId`).then((res) => {
+        const employeeId = this.props.match.params.employeeId
+        axios.get(`/api/employee/${employeeId}/clients`).then((res) => {
             console.log(res.data)
-            this.setState({ clients: res.data })
+            this.setState({ clientProfiles: res.data })
         })
     }
 
@@ -44,30 +44,6 @@ class clientPage extends Component {
         this.getAllPortfolios()
     }
 
-    // componentDidMount() {
-    //     const employeeId = this.props.match.params.employeeId
-    //     axios.get(`/api/employee/${employeeId}/clients`).then(res => {
-    //         console.log(res.data)
-    //         this.setState({
-    //             clients: res.data
-    //             // portfolio: res.data.portfolio
-    //         })
-    //     })
-    // }
-
-    // handleCreateNewClient = () => {
-    //     const clientId = this.props.match.params.clientId
-    //     const payload = {
-    //         name: "Client's Name",
-    //         location: "location",
-    //         contact: "phone number",
-    //     }
-    //     axios.post(`/api/employee/:employeeId/clients/${clientId}/porfolios`, payload).then(res => {
-    //         const newClient = res.data
-    //         const newStateClients = [...this.state.clients, newClient]
-    //         this.setState({ clients: newStateClients })
-    //     })
-    // }
     handleDelete = clientId => {
         axios.delete(`/api/employee/:employeeId/clients/${clientId}`).then(() => {
             const newClients = [...this.state.clients]
@@ -89,25 +65,6 @@ class clientPage extends Component {
         this.setState({ clients: updatedValue })
 
     }
-    // handleUpdate = (clientId) => {
-    //     const clientToUpdate = this.state.clients.find(client => {
-    //         return client._id === clientId
-    //     })
-    //     axios.patch(`/api/employee/:employeeId/clients/${clientId}`, clientToUpdate).then(() => {
-    //         console.log("Your Client Has Been Updated!")
-    //     })
-    // }
-
-    // handleSubmit = (event) => {
-    //     event.preventDefault()
-
-    //     axios.post('/api/employee/clients', this.state.newClient).then(res => {
-    //         console.log(res.data)
-    //         this.props.history.push(`/clients/${res.data._id}`)
-    //     })
-    // }
-
-
 
     render() {
         return (
@@ -116,15 +73,15 @@ class clientPage extends Component {
 
                     <h1> All Clients: </h1>
 
-                    {/* {this.state.clients.map((client) => {
+                    {this.state.clientProfiles.map((client) => (
                         <div key={client._id}>
-                            {client.name}
+                           <Link to={`clients/${client._id}`}> {client.name}</Link> 
                             {client.location}
                             {client.contact}
                         </div>
 
 
-                    })} */}
+                    ))}
                     <div>
 
 
