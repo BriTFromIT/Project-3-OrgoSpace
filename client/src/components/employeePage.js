@@ -38,10 +38,28 @@ h1, form {
 
 class employeePage extends Component {
     state = {
-        employees: []
+        employees: [],
+        employeeUpdate: {
+            username: " ",
+            location: " ",
+        }
+    }
+    handleChange = (event) => {
+        const updatedEmployee = {...this.state.employeeUpdate}
+
+        updatedEmployee[event.target.name] = event.target.value
+        this.setState({ employeeUpdate: updatedEmployee })
+    }
+    handleSubmit = (event) => {
+        event.preventDefault()
+
+        axios.post('/api/employee', this.state.employeeUpdate).then(res => {
+            console.log(res.data)
+            this.props.history.push(`/employee/${res.data._id}`)
+        })
     }
 
-    getAllClients = () => {
+    getAllEmployee = () => {
         axios.get(`/api/employee`).then((res) => {
             console.log(res.data)
             this.setState({ employees: res.data })
@@ -49,7 +67,7 @@ class employeePage extends Component {
     }
 
     componentDidMount() {
-        this.getAllClients()
+        this.getAllEmployee()
     }
 
     render() {
@@ -62,10 +80,10 @@ class employeePage extends Component {
                             {employee.location}
                         </div>
                     ))}
-
+                    <Link to='/employee/:employeeId'> <button> Update Info </button></Link>
                     <Link to='/clients'><button> Clients </button> </Link>
                     <Link to='/employee'><button> Home </button></Link>
-                    <button> Update Employee Profile </button>
+                  
                 </div>
             </EmployeeStyle>
         );

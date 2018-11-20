@@ -36,7 +36,7 @@ class NavBar extends Component {
        <NavBarStyles>
            <div>
          <Link to="/"> 🏠 Home </Link>
-         <Link to="/clients"> CLIENTS </Link>
+         <Link to="/clients"> 🕺🏿 Clients </Link>
 
 
 
