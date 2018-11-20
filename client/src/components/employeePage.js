@@ -37,41 +37,34 @@ h1, form {
 // Create a button that will take you to the Clients page 
 
 class employeePage extends Component {
-        state = {
-            // img: " ",
-            username: "Diamond Danner ",
-            location: " Atlanta, GA ",
-                }
-    
-    componentDidMount() {
-        const employeeId = this.props.match.params.username
-        axios.get(`/api/employee/${employeeId}`).then(res => {
+    state = {
+        employees: []
+    }
+
+    getAllClients = () => {
+        axios.get(`/api/employee`).then((res) => {
             console.log(res.data)
-            // this.setState({
-            //     employee: res.data,
-            //     clients: res.data.clients
-            // })
+            this.setState({ employees: res.data })
         })
     }
 
+    componentDidMount() {
+        this.getAllClients()
+    }
 
     render() {
         return (
             <EmployeeStyle>
                 <div>
-                    <h1> Welcome Back, {this.state.username} !</h1>
-                    <br></br>
-                    <h3> Employee Info: </h3>
+                    {this.state.employees.map((employee) => (
+                        <div key={employee._id}>
+                            {employee.username} <br />
+                            {employee.location}
+                        </div>
+                    ))}
 
-                     {/* Photo: {this.state.img} */}
-                     <br></br>
-                     Name: {this.state.username}
-                     <br></br>
-                     Location:   {this.state.location}
-                     <br></br> 
-                     <br></br>
                     <Link to='/clients'><button> Clients </button> </Link>
-                   <Link to='/employee'><button> Home </button></Link> 
+                    <Link to='/employee'><button> Home </button></Link>
                     <button> Update Employee Profile </button>
                 </div>
             </EmployeeStyle>

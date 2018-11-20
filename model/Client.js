@@ -14,5 +14,5 @@ const Client = new Schema({
     
 })
 
-module.exports = mongoose.model('Clients', Client)
+module.exports = mongoose.model('Client', Client)
 

@@ -139,7 +139,9 @@ let newEmployee = new Employee({
     img: " ",
     username: " Diamond Danner ",
     password: " DiamondIsLitty08 ",
-    location: " Atlanta, Georgia "
+    location: " Atlanta, Georgia ",
+    clientProfiles: [client3],
+
 })
 
 // ---------------------------------------------------------------

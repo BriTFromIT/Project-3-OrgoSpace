@@ -4,8 +4,8 @@ const Portfolio = require('../model/Portfolio')
 
 let clientsController = {
     index: (req, res) => {
-    Client.find().then(clients => {
-            res.render('/clientPage', {clients: clients });
+    Client.find({}).then(clients => {
+            res.render(clients)
         })
     },
  

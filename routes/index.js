@@ -14,16 +14,16 @@ const portfoliosController = require('../controllers/portfoliosController')
 // router.get('/', appController.index)
 
 
-router.get('/api/employee/', employeeController.index)
-router.get('/api/employee/:id', employeeController.show)
+router.get('/api/employee', employeeController.index)
+router.get('/api/employee/:emplyeeId', employeeController.show)
 
 
 
-router.get('/api/clients/', clientsController.index)
-router.get('/api/clients/portfolios', clientsController.show)
-router.post('/api/clients/clientnew', clientsController.create)
-router.patch('/api/clients/:clientId', clientsController.update)
-router.delete('/api/clients/:clientId', clientsController.delete)
+router.get('/api/employee/:employeeId/clients', clientsController.index)
+router.get('/api/employee/:employeeId/clients/:clientId', clientsController.show)
+router.post('/api/employee/:employeeId/clients', clientsController.create)
+router.patch('/api/employee/:employeeId/clients/:clientId', clientsController.update)
+router.delete('/api/employee/:employeeId/clients/:clientId', clientsController.delete)
 
 
 // router.get('/api/portfolios/', portfoliosController.index)
