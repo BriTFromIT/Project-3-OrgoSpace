@@ -25,44 +25,35 @@ h1, h3, form {
 
 class portfolioPage extends Component {
     state = {
-        portfolioFiles: [],
+        portfolioFiles: {}
     }
-    getAllPort = () => {
+
+
+    componentDidMount() {
         const portfolioId = this.props.match.params.portfolioId
-        axios.get(`/portfolios/${portfolioId}`).then((res) => {
+        const employeeId = this.props.match.params.employeeId
+        const clientId = this.props.match.params.clientId
+        axios.get(`/api/employee/${employeeId}/clients/${clientId}/portfolios/${portfolioId}`).then((res) => {
             console.log(res.data.portfolioFiles)
             this.setState({ portfolioFiles: res.data })
         })
     }
 
-    componentDidMount() {
-        this.getAllPort()
-    }
-    
     render() {
         return (
-            <ProfileStyle> 
-            <div>
-                PORTFOLIO PROFILE:
+            <ProfileStyle>
+                <div>
+                    PORTFOLIO PROFILE:
 
-                    {this.state.portfolioFiles.map((portfolio) => (
-                        <div key={portfolio._id}>
-                        {console.log(portfolio)}
-                        {portfolio.clientName}
-                        {portfolio.location}
-                        {portfolio.desiredPosition}
-                        {portfolio.desiredSalary}
-                        {portfolio.resume}
-                        {portfolio.coverLetter}
-                            
-                        </div>
+{this.state.portfolioFiles.clientName}
 
 
-                    ))}
 
 
-            </div>
-            </ProfileStyle>
+
+
+                </div>
+            </ProfileStyle >
         );
     }
 }

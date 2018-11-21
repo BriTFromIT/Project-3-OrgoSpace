@@ -19,4 +19,6 @@ Stretch Goals:
 Linkedin API:
 https://developer.linkedin.com/docs/rest-api
 
+This project was horrible.... 
+
 
