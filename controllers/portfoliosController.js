@@ -8,10 +8,10 @@ const portfoliosController = {
         })
     },
     show: (req, res) => {
-       Portfolio.findById(req.params.portfolioId).populate('portfolios').then((portfolio) => {
-           res.send(portfolio)
-       })
+        Portfolio.findById(req.params.portfolioId).populate('portfolios').then((portfolio) => {
+            res.send(portfolio)
+        })
     },
-    }
+}
 
-    module.export = portfoliosController
+module.exports = portfoliosController

@@ -33,8 +33,8 @@ class portfolioPage extends Component {
         const portfolioId = this.props.match.params.portfolioId
         const employeeId = this.props.match.params.employeeId
         const clientId = this.props.match.params.clientId
-        axios.get(`/api/employee/${employeeId}/clients/${clientId}/portfolios/${portfolioId}`).then((res) => {
-            console.log(res.data.portfolioFiles)
+        axios.get(`/api/employee/${employeeId}/clients/${clientId}/portfolios/`).then((res) => {
+            console.log("response",res.data.portfolioFiles)
             this.setState({ portfolioFiles: res.data })
         })
     }

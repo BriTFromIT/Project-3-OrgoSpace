@@ -25,8 +25,7 @@ router.get('/api/employee/:employeeId/clients/:clientId', clientsController.show
 router.post('/api/employee/:employeeId/clients', clientsController.create)
 // router.delete('/api/employee/:employeeId/clients/:clientId', clientsController.delete)
 
-
-// router.get('/api/employee/:employeeId/clients/:clientId/portfolios', portfoliosController.index)
+router.get('/api/employee/:employeeId/clients/:clientId/portfolios', portfoliosController.index)
 // router.get('/api/employee/:employeeId/clients/:clientId/portfolios/:portfolioId', portfoliosController.show)
 
 

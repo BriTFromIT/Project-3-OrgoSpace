@@ -14,23 +14,12 @@ const employeeController = {
         })
     },
     update: (req, res) => {
-        Employee.findByIdAndUpdate(req.params.employeeId, req.body, { new: true})
-        .then((updatedEmployee) => {
-            updatedEmployee.save()
-            res.send(updatedEmployee)
-        })
+        Employee.findByIdAndUpdate(req.params.employeeId, req.body, { new: true })
+            .then((updatedEmployee) => {
+                updatedEmployee.save()
+                res.send(updatedEmployee)
+            })
     }
-    }
+}
 
-    module.exports = employeeController
-
-
-
-
-
-
-
-
-
-
-
+module.exports = employeeController
