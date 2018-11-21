@@ -30,10 +30,6 @@ let Portfolio1 = new Portfolio({
     desiredPosition: " Database Administrator ",
     desiredSalary: 85000,
 
-    // -------------- Client's portfolio items:
-
-    // linkedIn: " ",
-    // bio: " ", // time restraint 
     resume: "./client/public/resumes/OrgoSpace_R1 ",
     coverLetter: " ./client/public/coverletters/OrgoSpace_CL1  ",
     brandStatement: " ./client/public/brandstatement/OrgoSpace_BS1   ",
@@ -49,10 +45,6 @@ let Portfolio2 = new Portfolio({
     desiredPosition: " President of Venus ",
     desiredSalary: 100000000,
 
-    // -------------- Client's portfolio items:
-
-    // linkedIn: " ",
-    // bio: " ", // time restraint 
     resume: "./client/public/resumes/OrgoSpace_R2  ",
     coverLetter: " ./client/public/coverletters/OrgoSpace_CL2  ",
     brandStatement: " "
@@ -68,10 +60,7 @@ let Portfolio3 = new Portfolio({
     desiredPosition: " Super Woman ",
     desiredSalary: 450000,
 
-    // -------------- Client's portfolio items:
-
-    // linkedIn: " ",
-    // bio: " ", // time restraint 
+ 
     resume: " ./client/public/resumes/OrgoSpace_R3 ",
     coverLetter: " ./client/public/coverletters/OrgoSpace_CL3 ",
     brandStatement: " ./client/public/brandstatement/OrgoSpace_BS3  "

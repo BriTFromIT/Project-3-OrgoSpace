@@ -17,11 +17,7 @@ const Portfolio = new Schema ({
      location: String,
      desiredPosition: String,
      desiredSalary: Number,
-     
-     // -------------- Client's portfolio items:
 
-    //  linkedIn: String, //LinkedIn API
-    //  bio: String, // time restraint
      resume: String,
      coverLetter: String,
      brandStatement: String,

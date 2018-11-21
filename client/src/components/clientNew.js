@@ -35,98 +35,96 @@ class clientList extends Component {
             currentPosition: " ",
         }
     }
-getAllClients = () => {
+    getAllClients = () => {
         axios.get('/api/clients').then((res) => {
             this.setState({ clients: res.data })
         })
     }
     componentDidMount() {
-        this.getAllClients()
+        this.getAllClients();
     }
-    handleCreateNewClient = () => {
-        const clientId = this.props.match.params.clientId
-        const payload = {
-            name: "Client's Name",
-            location: "location",
-            contact: "phone number",
-        }
-        axios.post(`/api/employee/:employeeId/clients/${clientId}/porfolios`, payload).then(res => {
-            const newClient = res.data
-            const newStateClients = [...this.state.clients, newClient]
-            this.setState({ clients: newStateClients })
-        })
-    }
+    // handleCreateNewClient = () => {
+    //     const employeeId = this.props.match.params.employeeId
+    //     const payload = {
+    //         img: this.state.img,
+    //         name: this.state.name,
+    //         location: this.state.location,
+    //         contact: this.state.contact,
+    //         currentPosition: this.state.currentPosition
+    //     }
+    //     axios.post(`/api/employee/${employeeId}/clients/`, payload).then(res => {
+    //        console.log('Client created! ')
+    //     })
+    // }
     handleChange = (event) => {
         console.log('name', event.target.name)
         console.log('value', event.target.value)
-        const updatedNewClient = {...this.state.newClient}
-        updatedNewClient [event.target.name] = event.target.value
+        const updatedNewClient = { ...this.state.newClient }
+        updatedNewClient[event.target.name] = event.target.value
         this.setState({ newClient: updatedNewClient })
     }
 
     handleSubmit = (event) => {
-
         event.preventDefault()
-
-        axios.post('/api/clients', this.state.newClient).then(res => {
+        const employeeId = this.props.match.params.employeeId
+        const payload = {
+            img: this.state.newClient.img,
+            name: this.state.newClient.name,
+            location: this.state.newClient.location,
+            contact: this.state.newClient.contact,
+            currentPosition: this.state.newClient.currentPosition
+        }
+        axios.post(`/api/employee/${employeeId}/clients`, payload).then(res => {
+            console.log('Hit!')
             console.log(res.data)
-            this.props.history.push(`/clients/${res.data._id}`)
+            this.props.history.push(`/${employeeId}/clients/`)
         })
-    }
-    handleSubmit = (event) => {
-        event.preventDefault()
 
-        axios.post('/api/employee/clients', this.state.newClient).then(res => {
-            console.log(res.data)
-            this.props.history.push(`/clients/${res.data._id}`)
-        })
     }
 
-    
+
 
     render() {
         return (
 
-            <div>
+
+
             <ClientStyle>
-                <h1> *** ORGOSPACE *** HOMEPAGE *** </h1> 
-                
+
+
                 <h3> Create New Client </h3>
-                     <div>
-                     <form onSubmit={this.handleChange.Submit}>
-                         <div>
-                             <label htmlFor="name"> Client Name: </label>
-                             <input onChange={this.handleChange} value={this.state.newClient.name} type="text" name="name" />
-                         </div>
+                <div>
+                    <form onSubmit={this.handleSubmit}>
+                        <div>
+                            <label htmlFor="name"> Client Name: </label>
+                            <input onChange={this.handleChange} value={this.state.newClient.name} type="text" name="name" />
+                        </div>
 
-                         <div>
-                             <label htmlFor="location"> Client Location: </label>
-                             <input onChange={this.handleChange} value={this.state.newClient.location} type="text" name="location" />
-                         </div>
+                        <div>
+                            <label htmlFor="location"> Client Location: </label>
+                            <input onChange={this.handleChange} value={this.state.newClient.location} type="text" name="location" />
+                        </div>
 
-                         <div>
-                             <label htmlFor="contact"> Client Contact: </label>
-                             <input onChange={this.handleChange} value={this.state.newClient.contact} type="text" name="contact" />
-                         </div>
+                        <div>
+                            <label htmlFor="contact"> Client Contact: </label>
+                            <input onChange={this.handleChange} value={this.state.newClient.contact} type="text" name="contact" />
+                        </div>
 
-                         <div>
-                             <label htmlFor="currentPosition"> Client Desired Position: </label>
-                             <input onChange={this.handleChange} value={this.state.newClient.currentPosition} type="text" name="currentPosition" />
-                         </div>
-                        <Link to='/employee/:employeeId'> <button type="submit"> Client Created </button> </Link>
+                        <div>
+                            <label htmlFor="currentPosition"> Client Desired Position: </label>
+                            <input onChange={this.handleChange} value={this.state.newClient.currentPosition} type="text" name="currentPosition" />
+                        </div>
+                        <button type="submit"> Client Created  </button>
 
-                     </form> </div>
+                    </form>
+                </div>
+                {/* <Link to='/clients'><button> Clients </button> </Link>
+                <Link to='/employee'><button> Home </button></Link> */}
 
-
-            </ClientStyle>
-
-
-<Link to='/clients'><button> Clients </button> </Link>
-  <Link to='/employee'><button> Home </button></Link> 
-  
-      </div>     
+            </ClientStyle>       
             
-        );
+    );
+
     }
 }
 

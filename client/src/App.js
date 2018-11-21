@@ -22,7 +22,7 @@ class App extends Component {
           <Switch>
             <Route exact path='./clients/' component={clientRemove} />
             <Route exact path='/employee/:employeeId' component={employeeUpdatePage} />
-            <Route exact path='/clients/clientnew' component={clientNew} />
+            <Route exact path='/:employeeId/clients/clientnew' component={clientNew} />
             <Route exact path='/:employeeId/clients' component={clientPage} />
             <Route exact path='/:employeeId/clients/:clientId' component={portfolioPage} />
             <Route path='/' component={employeePage} />

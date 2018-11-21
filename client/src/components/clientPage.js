@@ -41,6 +41,9 @@ class clientPage extends Component {
     }
 
     componentDidMount() {
+        console.log("hello")
+        console.log(this.props.match.params.employeeId)
+
         this.getAllPortfolios()
     }
 
@@ -94,7 +97,7 @@ class clientPage extends Component {
                     <Link to='/employee'><button> Home </button></Link>
                     <br></br>
                     <br></br>
-                    <Link to='/clients/clientnew'><button> Create New Client </button></Link>
+                    <Link to={`/${this.props.match.params.employeeId}/clients/clientnew`}><button> Create New Client </button></Link>
                 </div>
             </ClientStyle>
         );

@@ -27,29 +27,34 @@ class portfolioPage extends Component {
     state = {
         portfolioFiles: [],
     }
-    getAllPortfolios = () => {
-        const employeeId = this.props.match.params.employeeId
-        axios.get(`/api/employee/${employeeId}/clients`).then((res) => {
-            console.log(res.data)
-            this.setState({ clientProfiles: res.data })
+    getAllPort = () => {
+        const portfolioId = this.props.match.params.portfolioId
+        axios.get(`/portfolios/${portfolioId}`).then((res) => {
+            console.log(res.data.portfolioFiles)
+            this.setState({ portfolioFiles: res.data })
         })
     }
 
     componentDidMount() {
-        this.getAllPortfolios()
+        this.getAllPort()
     }
     
     render() {
         return (
             <ProfileStyle> 
             <div>
-                
+                PORTFOLIO PROFILE:
 
                     {this.state.portfolioFiles.map((portfolio) => (
                         <div key={portfolio._id}>
-                           <Link to={`portfolios/${portfolio._id}`}> {portfolio.name}</Link> 
-                            {portfolio.location}
-                            {portfolio.contact}
+                        {console.log(portfolio)}
+                        {portfolio.clientName}
+                        {portfolio.location}
+                        {portfolio.desiredPosition}
+                        {portfolio.desiredSalary}
+                        {portfolio.resume}
+                        {portfolio.coverLetter}
+                            
                         </div>
 
 

@@ -23,12 +23,12 @@ let clientsController = {
         Client.create(req.body).then((client) => {
             res.send(client)
         })
-    },
-    delete: (req, res) => {
-        Client.findByIdAndRemove(req.params.id).then(() => {
-            res.redirect(`/clients`)
-        })
     }
+    // delete: (req, res) => {
+    //     Client.findByIdAndRemove(req.params.id).then(() => {
+    //         res.redirect(`/clients`)
+    //     })
+    // }
 
 }
 module.exports = clientsController
