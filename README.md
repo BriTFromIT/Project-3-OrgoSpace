@@ -7,7 +7,11 @@
 
 
 # Project-3-OrgoSpace
-This is my Project 3 of WDI18 - As a writer, I'm passionate about helping others succeed in reaching their career goals. With technology growing as rapidly as it is, our generation struggles with social skills, emotional skills, and selling ourselves. This project is a stepping stone in my career as a resume writer and a developer to test my skills of learning Express - Axios - React. I have created an employee based database to neatly organize clients and their portfolios. The employee will have clients and those clients will have portfolios.
+This is my Project 3 of WDI18 - As a writer, I have had many opportunities to explore my flexibility in the types of writing I do. Since technical writing is my native tongue, I've turned my passion for writing into helping others constructing the best resumes, cover letters, etc. With technology growing as rapidly as it is, our generation struggles with social skills, emotional skills, and selling ourselves. This project is a stepping stone in my career as a resume writer and a developer to test my skills of learning Express - Axios - React. I have created an employee based database to neatly organize clients and their portfolios. The employee will have clients and those clients will have portfolios and those portfolios will consist of a resume, cover letter, and brand
+
+Trello Link:
+https://trello.com/b/ak80DDOO/project-3
+
 
 
 Heroku App:
