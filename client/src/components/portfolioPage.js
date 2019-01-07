@@ -25,7 +25,18 @@ h1, h3, form {
 
 class portfolioPage extends Component {
     state = {
-        portfolioFiles: {}
+        portfolioFiles: {
+            img: '',
+     clientName: '',
+     location: '',
+     desiredPosition: '',
+     desiredSalary: Number,
+
+     resume: '',
+     coverLetter: '',
+     brandStatement: '',
+     
+        }
     }
 
 
@@ -46,6 +57,7 @@ class portfolioPage extends Component {
                     PORTFOLIO PROFILE:
 
 {this.state.portfolioFiles.clientName}
+
 
 
 

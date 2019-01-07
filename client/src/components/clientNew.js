@@ -14,11 +14,15 @@ display: flex;
     align-items: center;
 justify-content: center;
 
-h1, h3, form {
+h1, form {
     text-algin:center;
     color: black;
     background-color: white;
     align-items: center;
+}
+h3 {
+    color: blue;
+    
 }
 
 }`
@@ -74,7 +78,7 @@ class clientList extends Component {
             contact: this.state.newClient.contact,
             currentPosition: this.state.newClient.currentPosition
         }
-        axios.post(`/api/employee/${employeeId}/clients/`, payload).then(res => {
+        axios.post(`/api/employee/${employeeId}/clients/clientConfirm`, payload).then(res => {
             console.log('Hit!')
             console.log(res.data)
             this.props.history.push(`/${employeeId}/clients/`)
@@ -93,6 +97,7 @@ class clientList extends Component {
 
 
                 <h3> Create New Client </h3>
+                <br />
                 <div>
                     <form onSubmit={this.handleSubmit}>
                         <div>
@@ -114,7 +119,8 @@ class clientList extends Component {
                             <label htmlFor="currentPosition"> Client Desired Position: </label>
                             <input onChange={this.handleChange} value={this.state.newClient.currentPosition} type="text" name="currentPosition" />
                         </div>
-                        <button type="submit"> Create New Client </button>
+                        <br />
+                        <button type="submit"> Client Created </button>
 
                     </form>
                 </div>

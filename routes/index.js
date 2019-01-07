@@ -23,6 +23,7 @@ router.get('/api/employee/:employeeId', employeeController.show)
 router.get('/api/employee/:employeeId/clients', clientsController.index)
 router.get('/api/employee/:employeeId/clients/:clientId', clientsController.show)
 router.post('/api/employee/:employeeId/clients', clientsController.create)
+// router.get(`/api/employee/${employeeId}/clients/clientConfirm`,clientsController.show)
 // router.delete('/api/employee/:employeeId/clients/:clientId', clientsController.delete)
 
 router.get('/api/employee/:employeeId/clients/:clientId/portfolios', portfoliosController.index)
