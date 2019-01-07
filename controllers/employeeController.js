@@ -4,8 +4,8 @@ const Employee = require('../model/Employee')
 
 const employeeController = {
     index: (req, res) => {
-        Employee.find({}).then((employees) => {
-            res.send(employees)
+        Employee.find({}).then((employee) => {
+            res.send(employee)
         })
     },
     show: (req, res) => {

@@ -36,7 +36,7 @@ class clientList extends Component {
         }
     }
     getAllClients = () => {
-        axios.get('/api/clients').then((res) => {
+        axios.get('/api/employee/:employeeId/clients').then((res) => {
             this.setState({ clients: res.data })
         })
     }
@@ -74,7 +74,7 @@ class clientList extends Component {
             contact: this.state.newClient.contact,
             currentPosition: this.state.newClient.currentPosition
         }
-        axios.post(`/api/employee/${employeeId}/clients`, payload).then(res => {
+        axios.post(`/api/employee/${employeeId}/clients/`, payload).then(res => {
             console.log('Hit!')
             console.log(res.data)
             this.props.history.push(`/${employeeId}/clients/`)
@@ -114,7 +114,7 @@ class clientList extends Component {
                             <label htmlFor="currentPosition"> Client Desired Position: </label>
                             <input onChange={this.handleChange} value={this.state.newClient.currentPosition} type="text" name="currentPosition" />
                         </div>
-                        <button type="submit"> Client Created  </button>
+                        <button type="submit"> Create New Client </button>
 
                     </form>
                 </div>

@@ -11,7 +11,7 @@ let Employee = new Schema ({
     clientProfiles: [Client.schema]
 })
 
-module.exports = mongoose.model('Employees', Employee)
+module.exports = mongoose.model('Employee', Employee)
 
 
 
